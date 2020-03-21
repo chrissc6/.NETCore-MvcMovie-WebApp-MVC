@@ -68,6 +68,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Movies/Edit/5
+        //You could apply the [HttpGet] attribute to this first edit method, but that's not necessary because [HttpGet] is the default.
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,6 +87,8 @@ namespace MvcMovie.Controllers
         // POST: Movies/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //The HttpPost attribute specifies that this Edit method can be invoked only for POST requests.
+        //The [Bind] attribute is one way to protect against over-posting. 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,Genre,Price")] Movie movie)
