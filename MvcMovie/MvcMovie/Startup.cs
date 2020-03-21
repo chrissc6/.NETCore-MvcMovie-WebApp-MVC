@@ -27,6 +27,7 @@ namespace MvcMovie
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        //The routing format is set in the Configure method in Startup.cs file.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
